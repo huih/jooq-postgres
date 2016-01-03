@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.2.0.xsd">
+  <jdbc>
+    <driver>org.postgresql.Driver</driver>
+    <url>jdbc:postgresql://192.168.199.164:1999/pgbench</url>
+    <user>db_user</user>
+    <password>12345</password>
+  </jdbc>
+  <generator>
+    <name>org.jooq.util.DefaultGenerator</name>
+    <database>
+      <name>org.jooq.util.postgres.PostgresDatabase</name>
+      <inputSchema>public</inputSchema>
+      <!-- 
+      <includes>bigtable</includes>
+       -->
+      <excludes></excludes>
+    </database>
+    <target>
+      <packageName>com.ph.jooq</packageName>
+      <directory>/home/harris/work/scripts/java/joop-postgres/src</directory>
+    </target>
+  </generator>
+</configuration>
