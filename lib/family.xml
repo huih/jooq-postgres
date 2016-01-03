@@ -11,9 +11,7 @@
     <database>
       <name>org.jooq.util.postgres.PostgresDatabase</name>
       <inputSchema>public</inputSchema>
-      <!-- 
       <includes>bigtable</includes>
-       -->
       <excludes></excludes>
     </database>
     <target>
