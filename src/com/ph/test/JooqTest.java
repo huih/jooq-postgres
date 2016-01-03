@@ -2,6 +2,7 @@ package com.ph.test;
 
 import java.math.BigDecimal;
 
+import org.jooq.BatchBindStep;
 import org.jooq.DSLContext;
 import org.jooq.InsertValuesStep4;
 import org.jooq.Record;
@@ -28,6 +29,16 @@ public class JooqTest {
 		
 		System.out.println("BigtableRecord RECORDS saved");
 	}
+	
+	private static void batchStore(DSLContext create) {
+		BatchBindStep bind = create.batch(create.insertInto(Bigtable.BIGTABLE, Bigtable.BIGTABLE.ID, Bigtable.BIGTABLE.NAME, Bigtable.BIGTABLE.AGE, Bigtable.BIGTABLE.MONEY).values((Integer)null, null, null, null));
+		for (int i = 0; i < 10; i++) {
+			bind.bind(100+i, "batchLooq"+String.valueOf(100+i), 100+i, 100+i + (100+i) * 0.01);
+		}
+		bind.execute();
+		System.out.println("BigtableRecord RECORDS saved");
+	}
+		
 	/**
 	 * select all entries in Table Family
 	 * @param create
@@ -94,7 +105,13 @@ public class JooqTest {
 
 			// selection of records
 			selection(create);
+			
+			//batch insert records
+			batchStore(create);
 
+			// selection of records
+			selection(create);
+						
 			// update of records
 			update(create);
 			
