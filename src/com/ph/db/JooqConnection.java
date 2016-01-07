@@ -20,9 +20,9 @@ public class JooqConnection {
 
 		String userName = "db_user";
 
-		String password = "0000";
+		String password = "12345";
 
-		String url = "jdbc:postgresql://192.168.199.164:5432/pgbench";
+		String url = "jdbc:postgresql://192.168.7.99:1999/pgbench";
 
 		try {
 			Class.forName("org.postgresql.Driver").newInstance();

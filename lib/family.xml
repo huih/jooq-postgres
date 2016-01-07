@@ -2,9 +2,9 @@
 <configuration xmlns="http://www.jooq.org/xsd/jooq-codegen-3.2.0.xsd">
   <jdbc>
     <driver>org.postgresql.Driver</driver>
-    <url>jdbc:postgresql://192.168.199.164:1999/pgbench</url>
+    <url>jdbc:postgresql://192.168.7.99:5432/pgbench</url>
     <user>db_user</user>
-    <password>12345</password>
+    <password>0000</password>
   </jdbc>
   <generator>
     <name>org.jooq.util.DefaultGenerator</name>
